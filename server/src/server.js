@@ -22,6 +22,10 @@ app.use("/api/interviews", interviewRoutes);
 
 const sessionRoutes = require("./routes/sessionRoutes");
 app.use("/api/sessions", sessionRoutes);
+
+const reportRoutes = require("./routes/reportRoutes");
+app.use("/api/reports", reportRoutes);
+
 // Database connection
 const connectDB = require("./config/db");
 
