@@ -21,13 +21,13 @@ const interviewSchema = new mongoose.Schema(
 
         difficulty: {
             type: String,
-            enum: ["easy", "medium", "hard"],
-            default: "medium"
+            enum: ["Easy", "Medium", "Hard"],
+            default: "Medium"
         },
-
+        
         interviewType: {
             type: String,
-            enum: ["technical", "hr", "mixed"],
+            enum: ["Technical", "HR", "Behavioral", "Mixed"],
             required: true
         },
 
