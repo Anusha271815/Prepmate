@@ -17,6 +17,8 @@ import {
 } from "../../services/api";
 import { RootState } from "../../redux/store";
 import { getTheme } from "../../theme";
+import AvatarPreview from "../../components/common/AvatarPreview.web";
+import { useNavigation } from "@react-navigation/native";
 
 const PracticeScreen = () => {
     const themeMode = useSelector(
@@ -83,6 +85,7 @@ const PracticeScreen = () => {
         "Blockchain Developer",
         "Other"
     ];
+    const navigation = useNavigation<any>();
 
     const renderOptions = (
         options: string[],
@@ -158,7 +161,9 @@ const handleStartInterview = async () => {
         console.log("Session ID:", sessionId);
         console.log("Generated Questions:", questionsResponse.questions);
 
-        alert("Interview session started successfully!");
+        navigation.navigate("Interview", {
+            sessionId
+        });
 
     } catch (error: any) {
         console.error(
@@ -182,6 +187,7 @@ const handleStartInterview = async () => {
             ]}
             contentContainerStyle={styles.content}
         >
+            <AvatarPreview questionText="" />
             <Text
                 style={[
                     styles.heading,

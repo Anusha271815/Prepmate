@@ -12,6 +12,7 @@ import SettingsScreen from "../screens/SettingsScreen";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import { getTheme } from "../theme";
+import InterviewScreen from "../screens/InterviewScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -79,6 +80,10 @@ const AppNavigator = () => {
                         <Stack.Screen
                             name="Settings"
                             component={SettingsScreen}
+                        />
+                        <Stack.Screen
+                            name="Interview"
+                            component={InterviewScreen}
                         />
                     </>
                 )}
